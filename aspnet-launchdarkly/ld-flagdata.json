@@ -1,0 +1,175 @@
+{
+  "segments": {
+    "beta-users": {
+      "key": "beta-users",
+      "included": [
+        "flaggy-api:2",
+        "flaggy-api:1"
+      ],
+      "excluded": [],
+      "includedContexts": [],
+      "excludedContexts": [],
+      "salt": "2e3ddada52c44e589ea08503d818e3ab",
+      "rules": [],
+      "unboundedContextKind": "user",
+      "version": 3,
+      "generation": 1,
+      "deleted": false
+    },
+    "new-devices": {
+      "key": "new-devices",
+      "included": [],
+      "excluded": [],
+      "includedContexts": [
+        {
+          "contextKind": "device",
+          "values": [
+            "flaggy-api:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"
+          ]
+        }
+      ],
+      "excludedContexts": [],
+      "salt": "c50e257f54ab47f78da34fd6db3d6ce3",
+      "rules": [],
+      "unboundedContextKind": "user",
+      "version": 2,
+      "generation": 1,
+      "deleted": false
+    }
+  },
+  "flags": {
+    "ADD_POST": {
+      "key": "ADD_POST",
+      "on": true,
+      "prerequisites": [],
+      "targets": [],
+      "contextTargets": [],
+      "rules": [
+        {
+          "variation": 0,
+          "id": "db1ba79d-d158-4a01-b0ab-460798bee3fb",
+          "clauses": [
+            {
+              "contextKind": "user",
+              "attribute": "segmentMatch",
+              "op": "segmentMatch",
+              "values": [
+                "new-devices"
+              ],
+              "negate": false
+            }
+          ],
+          "trackEvents": false
+        }
+      ],
+      "fallthrough": {
+        "variation": 1
+      },
+      "offVariation": 1,
+      "variations": [
+        true,
+        false
+      ],
+      "clientSideAvailability": {
+        "usingMobileKey": false,
+        "usingEnvironmentId": false
+      },
+      "clientSide": false,
+      "salt": "edf0eb7059894416bde1faef66489537",
+      "trackEvents": false,
+      "trackEventsFallthrough": false,
+      "debugEventsUntilDate": null,
+      "version": 4,
+      "deleted": false
+    },
+    "BUTTON_SCHEME_VALUE": {
+      "key": "BUTTON_SCHEME_VALUE",
+      "on": true,
+      "prerequisites": [],
+      "targets": [],
+      "contextTargets": [],
+      "rules": [],
+      "fallthrough": {
+        "rollout": {
+          "contextKind": "user",
+          "variations": [
+            {
+              "variation": 0,
+              "weight": 33000
+            },
+            {
+              "variation": 1,
+              "weight": 33000
+            },
+            {
+              "variation": 2,
+              "weight": 34000
+            }
+          ]
+        }
+      },
+      "offVariation": 3,
+      "variations": [
+        "btn-primary",
+        "btn-secondary",
+        "btn-light",
+        "btn-dark"
+      ],
+      "clientSideAvailability": {
+        "usingMobileKey": false,
+        "usingEnvironmentId": false
+      },
+      "clientSide": false,
+      "salt": "fc8d7aa08ae9488b86f3b65ab904746a",
+      "trackEvents": false,
+      "trackEventsFallthrough": false,
+      "debugEventsUntilDate": null,
+      "version": 13,
+      "deleted": false
+    },
+    "SHOW_TAGS": {
+      "key": "SHOW_TAGS",
+      "on": true,
+      "prerequisites": [],
+      "targets": [],
+      "contextTargets": [],
+      "rules": [
+        {
+          "variation": 0,
+          "id": "dc7439da-b115-4dd1-a005-a916e9f03c44",
+          "clauses": [
+            {
+              "contextKind": "user",
+              "attribute": "segmentMatch",
+              "op": "segmentMatch",
+              "values": [
+                "beta-users"
+              ],
+              "negate": false
+            }
+          ],
+          "trackEvents": false
+        }
+      ],
+      "fallthrough": {
+        "variation": 1
+      },
+      "offVariation": 1,
+      "variations": [
+        true,
+        false
+      ],
+      "clientSideAvailability": {
+        "usingMobileKey": false,
+        "usingEnvironmentId": false
+      },
+      "clientSide": false,
+      "salt": "5cc1ec6ed23b4d00be4403693b7935df",
+      "trackEvents": false,
+      "trackEventsFallthrough": false,
+      "debugEventsUntilDate": null,
+      "version": 10,
+      "deleted": false
+    }
+  }
+}

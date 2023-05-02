@@ -6,6 +6,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flaggy", "src\Flaggy.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flaggy.Tests", "tests\Flaggy.Tests.csproj", "{BE17DF38-5F3F-4992-8B15-BB1B7E4A7694}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Files", "Files", "{6E58E1B2-D361-41A2-AFB9-A49A6740CDB2}"
+	ProjectSection(SolutionItems) = preProject
+		ld-flagdata.json = ld-flagdata.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
