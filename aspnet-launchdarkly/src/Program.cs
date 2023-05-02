@@ -82,3 +82,6 @@ LdClient AddLaunchDarklyClient(WebApplicationBuilder webApplicationBuilder)
     webApplicationBuilder.Services.AddSingleton(_ => ldClient);
     return ldClient;
 }
+
+// For testing
+public partial class Program { }
