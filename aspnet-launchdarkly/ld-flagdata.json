@@ -140,10 +140,10 @@
           "clauses": [
             {
               "contextKind": "user",
-              "attribute": "segmentMatch",
-              "op": "segmentMatch",
+              "attribute": "country",
+              "op": "in",
               "values": [
-                "beta-users"
+                "PT"
               ],
               "negate": false
             }
@@ -168,7 +168,7 @@
       "trackEvents": false,
       "trackEventsFallthrough": false,
       "debugEventsUntilDate": null,
-      "version": 10,
+      "version": 11,
       "deleted": false
     }
   }

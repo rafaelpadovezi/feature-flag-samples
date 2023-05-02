@@ -22,14 +22,15 @@ public class PostsController : ControllerBase
     [HttpGet]
     public async Task<IActionResult> Get(int userId)
     {
-        var users = new[]
+        var countries = new Dictionary<int, string>
         {
-            new { Name = "User1" }, new { Name = "User2" }, new { Name = "User3" }, new { Name = "User4" },
+            { 1, "PT" }, { 2, "PT" }, { 3, "PT" }
         };
+        var userCountry = countries.TryGetValue(userId, out var country) ? country : "BR";
 
         var context = Context.Builder(FeatureFlags.CreateContextKey(userId.ToString()))
             .Set("user-id", userId)
-            .Set("name", users[userId - 1].Name)
+            .Set("country", userCountry)
             .Build();
 
         var posts = await _context.Posts.AsNoTracking().ToListAsync();
