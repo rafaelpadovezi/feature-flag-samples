@@ -1,0 +1,23 @@
+version: "3.9"
+
+x-build: &dockerfile-dev-build
+  context: .
+  dockerfile: Dockerfile.dev
+
+services:
+  db:
+    image: mcr.microsoft.com/mssql/server
+    environment:
+      SA_PASSWORD: Password1
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+
+  generate-migrations:
+    build: *dockerfile-dev-build
+    volumes:
+      - .:/app
+    command:
+      [
+          "./scripts/generate-migrations.sh",
+      ]
