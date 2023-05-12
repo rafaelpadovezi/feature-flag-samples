@@ -1,5 +1,6 @@
 import os
 import pathlib
+from distutils.util import strtobool
 
 from logging import Formatter
 from pathlib import Path
@@ -173,7 +174,8 @@ STATIC_URL = STATIC_HOST + STATIC_URL
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 #####
-# Custom settings for Unleash
-UNLEASH_API_TOKEN = os.getenv("UNLEASH_TOKEN", "default:development.unleash-insecure-api-token")
-UNLEASH_APP_NAME = os.getenv("UNLEASH_APP_NAME", "app-django-python")
-UNLEASH_URL = os.getenv("UNLEASH_URL", "https://app.unleash-hosted.com/demo/api/")
+# Custom settings for LaunchDarkly
+LAUNCH_DARKLY_SDK_KEY = os.getenv("LAUNCH_DARKLY_SDK_KEY")
+LAUNCH_DARKLY_ONLINE = strtobool(os.getenv("LAUNCH_DARKLY_ONLINE", False))
+LAUNCH_DARKLY_VERBOSE_LOG_LEVEL = os.getenv("LAUNCH_DARKLY_VERBOSE_LOG_LEVEL")
+LAUNCH_DARKLY_FLAG_DATA_FILE_PATH = os.getenv("LAUNCH_DARKLY_FLAG_DATA_FILE_PATH", BASE_DIR.joinpath("launchdarkly-flagdata.json"))

@@ -13,7 +13,7 @@ whitenoise = { extras = ['brotli'] }
 ### Add-ons
 requests = "*"
 python-dotenv = "*"
-unleashclient = "*"
+launchdarkly-server-sdk = "*"
 pyyaml = "*"
 ua-parser = "*"
 user-agents = "*"

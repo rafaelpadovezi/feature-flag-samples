@@ -1,22 +1,22 @@
-import { UnleashClient } from "unleash-proxy-client"
+import * as LDClient from 'launchdarkly-js-client-sdk';
 
 const $ = document.querySelector.bind(document)
 
-const unleash = new UnleashClient({
-  url: "http://localhost:4242/api/frontend",
-  clientKey: "default:development.unleash-insecure-frontend-api-token",
-  appName: "app-python-django-frontend",
-})
+const context = {
+  kind: 'user',
+  key: 'user-"d821cbc0-2e4d-49fc-a5b4-990eb991beec"'
+};
+const client = LDClient.initialize('CLIENT_SIDE_ID', context);
 
 const featureToggleHandler = () => {
   console.log(`Feature toggle handler has been called!`)
-  if (unleash.isEnabled("SHOW_EASTER_EGG")) {
+  const showEasterEgg = client.variation('SHOW_EASTER_EGG', false);
+  if (showEasterEgg) {
     $(".feature-toggle-placeholder").style.display = "inline"
   } else {
     $(".feature-toggle-placeholder").style.display = "none"
   }
 }
 
-unleash.on("ready", featureToggleHandler)
-unleash.on("update", featureToggleHandler)
-unleash.start()
+client.on("ready", featureToggleHandler)
+client.on("change", featureToggleHandler)

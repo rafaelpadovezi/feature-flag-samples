@@ -1,9 +1,9 @@
-import json
 import logging
 
 from django.shortcuts import redirect
 from django.shortcuts import render
 from django.urls import reverse
+from ldclient import Context
 
 from app_python_django.apps.core.models import Profile
 from app_python_django.apps.core.providers.feature_management import client
@@ -15,38 +15,34 @@ def index(request):
     user_id_pc = "40956364-e486-4d8e-b35e-60660721f467"
     user_id_mobile = "d821cbc0-2e4d-49fc-a5b4-990eb991beec"
     user_id = user_id_pc if request.user_agent.is_pc else user_id_mobile
-    user_context = {
-        "userId": user_id,
-        # Browser family can be `chrome` or `firefox`
-        "browser": request.user_agent.browser.family.lower(),
-    }
+    user_context = (
+        Context.builder(f"user-{user_id}")
+        .set("userId", user_id)
+        .set("browser", request.user_agent.browser.family.lower())
+        .build()
+    )
 
     # `PERMISSION` TOGGLES
-    should_show_profiles = client.is_enabled("SHOW_PROFILES", context=user_context)
-    should_allow_profile_management = client.is_enabled("ALLOW_PROFILE_MANAGEMENT", context=user_context)
+    should_show_profiles = client.variation("SHOW_PROFILES", user_context, False)
+    should_allow_profile_management = client.variation("ALLOW_PROFILE_MANAGEMENT", user_context, False)
     # `EXPERIMENT` TOGGLES
-    profile_management_button_scheme = client.get_variant("PROFILE_MANAGEMENT_BUTTON_SCHEME", context=user_context)
-    if profile_management_button_scheme["enabled"]:
-        button_scheme_name = profile_management_button_scheme["name"]
-        button_scheme_value = profile_management_button_scheme["payload"]["value"]
-    else:
-        button_scheme_name = "FALLBACK"
-        button_scheme_value = "btn-danger"
-    logger.info("Using the button scheme %s with value %s", button_scheme_name, button_scheme_value)
-    text_presentation = client.get_variant("TEXT_PRESENTATION", context=user_context)
-    if text_presentation["enabled"]:
-        text_presentation_name = text_presentation["name"]
-        text_presentation_value = json.loads(text_presentation["payload"]["value"])
-    else:
-        text_presentation_name = "FALLBACK"
-        text_presentation_value = {
-            "title": "Hello there 😄!",
-            "subTitle": "Change how this app behave by changing the feature toggle tool ⚒",
-            "profileTitle": "Registered profiles",
-        }
-    logger.info("Using the text presentation %s with value %s", text_presentation_name, text_presentation_value)
+    profile_management_button_scheme = client.variation_detail(
+        "PROFILE_MANAGEMENT_BUTTON_SCHEME", user_context, "btn-danger"
+    )
+    button_scheme_reason = profile_management_button_scheme.reason["kind"]
+    button_scheme_value = profile_management_button_scheme.value
+
+    logger.info("Using the button scheme with value %s due to %s", button_scheme_value, button_scheme_reason)
+
+    text_presentation_fallback = {
+        "profileTitle": "Registered profiles",
+        "subTitle": "Change how this app behave by changing the feature toggle tool ⚒",
+        "title": "Hello there 😄!",
+    }
+    text_presentation_value = client.variation("TEXT_PRESENTATION", user_context, text_presentation_fallback)
+
     # `KILL-SWITCH TOGGLES
-    game_shark_mode = client.is_enabled("GAME_SHARK_MODE", context=user_context)
+    game_shark_mode = client.variation("GAME_SHARK_MODE", user_context, False)
 
     context = {
         "show_profiles": should_show_profiles,

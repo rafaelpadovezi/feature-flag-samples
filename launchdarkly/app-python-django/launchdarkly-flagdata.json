@@ -1,0 +1,242 @@
+{
+    "segments": {},
+    "flags": {
+        "ALLOW_PROFILE_MANAGEMENT": {
+            "key": "ALLOW_PROFILE_MANAGEMENT",
+            "on": true,
+            "prerequisites": [],
+            "targets": [],
+            "contextTargets": [],
+            "rules": [],
+            "fallthrough": {
+                "variation": 0
+            },
+            "offVariation": 1,
+            "variations": [
+                true,
+                false
+            ],
+            "clientSideAvailability": {
+                "usingMobileKey": false,
+                "usingEnvironmentId": false
+            },
+            "clientSide": false,
+            "salt": "ff8c8c13aa5a49afacda091a5cd42487",
+            "trackEvents": false,
+            "trackEventsFallthrough": false,
+            "debugEventsUntilDate": null,
+            "version": 3,
+            "deleted": false
+        },
+        "ENABLE_PROFILE_ADMIN": {
+            "key": "ENABLE_PROFILE_ADMIN",
+            "on": true,
+            "prerequisites": [],
+            "targets": [],
+            "contextTargets": [],
+            "rules": [],
+            "fallthrough": {
+                "variation": 0
+            },
+            "offVariation": 1,
+            "variations": [
+                true,
+                false
+            ],
+            "clientSideAvailability": {
+                "usingMobileKey": false,
+                "usingEnvironmentId": false
+            },
+            "clientSide": false,
+            "salt": "9a226542f6264f3ba287fec08489a402",
+            "trackEvents": false,
+            "trackEventsFallthrough": false,
+            "debugEventsUntilDate": null,
+            "version": 5,
+            "deleted": false
+        },
+        "ENABLE_PROFILE_API": {
+            "key": "ENABLE_PROFILE_API",
+            "on": true,
+            "prerequisites": [],
+            "targets": [],
+            "contextTargets": [],
+            "rules": [],
+            "fallthrough": {
+                "variation": 0
+            },
+            "offVariation": 1,
+            "variations": [
+                true,
+                false
+            ],
+            "clientSideAvailability": {
+                "usingMobileKey": false,
+                "usingEnvironmentId": false
+            },
+            "clientSide": false,
+            "salt": "c176780210374d9385e65402a95206a2",
+            "trackEvents": false,
+            "trackEventsFallthrough": false,
+            "debugEventsUntilDate": null,
+            "version": 3,
+            "deleted": false
+        },
+        "GAME_SHARK_MODE": {
+            "key": "GAME_SHARK_MODE",
+            "on": false,
+            "prerequisites": [],
+            "targets": [],
+            "contextTargets": [],
+            "rules": [],
+            "fallthrough": {
+                "variation": 0
+            },
+            "offVariation": 1,
+            "variations": [
+                true,
+                false
+            ],
+            "clientSideAvailability": {
+                "usingMobileKey": false,
+                "usingEnvironmentId": false
+            },
+            "clientSide": false,
+            "salt": "d860b0fb3e2f4ff292a346cb31323c46",
+            "trackEvents": false,
+            "trackEventsFallthrough": false,
+            "debugEventsUntilDate": null,
+            "version": 3,
+            "deleted": false
+        },
+        "PROFILE_MANAGEMENT_BUTTON_SCHEME": {
+            "key": "PROFILE_MANAGEMENT_BUTTON_SCHEME",
+            "on": true,
+            "prerequisites": [],
+            "targets": [],
+            "contextTargets": [],
+            "rules": [
+                {
+                    "rollout": {
+                        "contextKind": "user",
+                        "variations": [
+                            {
+                                "variation": 0,
+                                "weight": 25000
+                            },
+                            {
+                                "variation": 1,
+                                "weight": 25000
+                            },
+                            {
+                                "variation": 2,
+                                "weight": 25000
+                            },
+                            {
+                                "variation": 3,
+                                "weight": 25000
+                            }
+                        ],
+                        "bucketBy": "browser"
+                    },
+                    "id": "342e2ee0-010d-4921-90a5-e394a07e1f41",
+                    "clauses": [
+                        {
+                            "contextKind": "user",
+                            "attribute": "kind",
+                            "op": "in",
+                            "values": [
+                                "user"
+                            ],
+                            "negate": false
+                        }
+                    ],
+                    "trackEvents": false
+                }
+            ],
+            "fallthrough": {
+                "variation": 2
+            },
+            "offVariation": 0,
+            "variations": [
+                "btn-dark",
+                "btn-light",
+                "btn-primary",
+                "btn-secondary"
+            ],
+            "clientSideAvailability": {
+                "usingMobileKey": false,
+                "usingEnvironmentId": false
+            },
+            "clientSide": false,
+            "salt": "d798790772574af9b9c9c8b4e6712ef6",
+            "trackEvents": false,
+            "trackEventsFallthrough": false,
+            "debugEventsUntilDate": null,
+            "version": 4,
+            "deleted": false
+        },
+        "SHOW_PROFILES": {
+            "key": "SHOW_PROFILES",
+            "on": true,
+            "prerequisites": [],
+            "targets": [],
+            "contextTargets": [],
+            "rules": [],
+            "fallthrough": {
+                "variation": 0
+            },
+            "offVariation": 1,
+            "variations": [
+                true,
+                false
+            ],
+            "clientSideAvailability": {
+                "usingMobileKey": false,
+                "usingEnvironmentId": false
+            },
+            "clientSide": false,
+            "salt": "5c21f7f89d7c48a2a96b97db4988ccc1",
+            "trackEvents": false,
+            "trackEventsFallthrough": false,
+            "debugEventsUntilDate": null,
+            "version": 3,
+            "deleted": false
+        },
+        "TEXT_PRESENTATION": {
+            "key": "TEXT_PRESENTATION",
+            "on": true,
+            "prerequisites": [],
+            "targets": [],
+            "contextTargets": [],
+            "rules": [],
+            "fallthrough": {
+                "variation": 1
+            },
+            "offVariation": 0,
+            "variations": [
+                {
+                    "profileTitle": "Registered profiles",
+                    "subTitle": "Change how this app behave by changing the feature toggle tool ⚒",
+                    "title": "Hello there 😄!"
+                },
+                {
+                    "title": "Hello you handsome 😉!",
+                    "profileTitle": "Profiles we've found",
+                    "subTitle": "Psiu! You can change how this thing behaves. Just change the feature toggles ⚒"
+                }
+            ],
+            "clientSideAvailability": {
+                "usingMobileKey": false,
+                "usingEnvironmentId": false
+            },
+            "clientSide": false,
+            "salt": "5db252b1ca514a83bbf89f7181e35540",
+            "trackEvents": false,
+            "trackEventsFallthrough": false,
+            "debugEventsUntilDate": null,
+            "version": 7,
+            "deleted": false
+        }
+    }
+}

@@ -7,3 +7,4 @@
 !.babelrc
 !package*.json
 !gunicorn_config.py
+!launchdarkly-flagdata.json

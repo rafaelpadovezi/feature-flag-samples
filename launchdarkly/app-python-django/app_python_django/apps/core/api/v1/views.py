@@ -1,3 +1,5 @@
+from random import choice
+
 from django.http import Http404
 from rest_framework import filters
 from rest_framework import viewsets
@@ -21,7 +23,15 @@ class ProfileViewSet(viewsets.ModelViewSet):
         """
         https://www.django-rest-framework.org/api-guide/views/#initialself-request-args-kwargs
         """
-        enable_profile_api = client.is_enabled("ENABLE_PROFILE_API")
+
+        users = [
+            "40956364-e486-4d8e-b35e-60660721f467",
+            "882c4eb4-7c89-4998-b93d-9efce0e7270c",
+            "64d8eb17-ae09-403e-be65-786dae090750",
+            "ffddfa83-0e0d-4eee-b091-0f3e1fe16773",
+        ]
+        user_context = {"key": f"user-{choice(users)}"}
+        enable_profile_api = client.variation("ENABLE_PROFILE_API", user_context, False)
         if not enable_profile_api:
             raise Http404("Not available")
         super().initial(request, *args, **kwargs)
