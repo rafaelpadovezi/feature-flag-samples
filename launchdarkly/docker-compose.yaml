@@ -7,9 +7,6 @@ services:
     ports:
       - "8000:8000"
   product-javascript-be:
-    depends_on:
-      unleash:
-        condition: service_healthy
     build:
       context: app-javascript-nextjs
     env_file: app-javascript-nextjs/.env.development

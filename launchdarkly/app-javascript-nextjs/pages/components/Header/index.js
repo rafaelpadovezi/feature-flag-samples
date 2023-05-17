@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useCallback } from "react"
 import Link from "next/link"
-import { useUnleash } from "../../contexts/feature-management"
+import { useLaunchDarkly } from "../../contexts/feature-management"
 
 const Header = () => {
   // States
@@ -8,16 +8,16 @@ const Header = () => {
   const [easterEggDisplay, setEasterEggDisplay] = useState("none")
   // Feature toggle
   /**
-   * @param client {UnleashClient}
+   * @param client {LDClient.LDClient}
    */
   const configureBehaviorThroughFeatures = client => {
-    setGameSharkMode(client.isEnabled("GAME_SHARK_MODE"))
-    setEasterEggDisplay(client.isEnabled("SHOW_EASTER_EGG") ? "inline" : "none")
+    setGameSharkMode(client.variation("GAME_SHARK_MODE"), false)
+    setEasterEggDisplay(client.variation("SHOW_EASTER_EGG", false) ? "inline" : "none")
   }
-  const whenNewConfigurationAvailableHandler = client => {
+  const whenNewConfigurationAvailableHandler = useCallback(client => {
     configureBehaviorThroughFeatures(client)
-  }
-  const client = useUnleash(whenNewConfigurationAvailableHandler)
+  })
+  const client = useLaunchDarkly(whenNewConfigurationAvailableHandler)
   useEffect(() => {
     if (client) {
       configureBehaviorThroughFeatures(client)

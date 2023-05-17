@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 import "bootstrap/dist/css/bootstrap.css"
-import { UnleashProvider } from "./contexts/feature-management"
+import { LaunchDarklyProvider } from "./contexts/feature-management"
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -12,9 +12,9 @@ function MyApp({ Component, pageProps }) {
   }, [])
 
   return (
-    <UnleashProvider>
+    <LaunchDarklyProvider>
       <Component {...pageProps} />
-    </UnleashProvider>
+    </LaunchDarklyProvider>
   )
 }
 

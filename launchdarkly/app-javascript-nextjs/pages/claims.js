@@ -3,7 +3,7 @@ import { faker } from "@faker-js/faker"
 import Layout from "./components/Layout"
 import Table from "./components/Table"
 import { useRouter } from "next/router"
-import { useUnleash } from "./contexts/feature-management"
+import { useLaunchDarkly } from "./contexts/feature-management"
 
 function Claims() {
   const claims = {
@@ -44,12 +44,13 @@ export default function WrappedClaimsPage() {
   // You can add a loading state to avoid flashes of content. Just ask ChatGPT case you need it.
   const [disableClaimsPage, setDisableClaimsPage] = useState(false)
   const router = useRouter()
-  const whenNewConfigurationAvailableHandler = client => {
-    setDisableClaimsPage(client.isEnabled("DISABLE_CLAIMS_PAGE"))
+  const whenNewDisableClaimsPageAvailableHandler = client => {
+    setDisableClaimsPage(client.variation("DISABLE_CLAIMS_PAGE", false))
   }
-  const client = useUnleash(whenNewConfigurationAvailableHandler)
+  // Subscribe only to changes of DISABLE_CLAIMS_PAGE feature
+  const client = useLaunchDarkly(whenNewDisableClaimsPageAvailableHandler, 'DISABLE_CLAIMS_PAGE')
   useEffect(() => {
-    if (client && disableClaimsPage) {
+    if (client && client.variation("DISABLE_CLAIMS_PAGE", false)) {
       router.replace("/404")
     }
   }, [router, disableClaimsPage, client])

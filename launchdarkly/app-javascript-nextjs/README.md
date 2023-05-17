@@ -1,6 +1,6 @@
 # App JavaScript Next.js
 
-This project demonstrates how to use feature toggles with Unleash.
+This project demonstrates how to use feature toggles with LaunchDarkly.
 
 ## Configuration
 

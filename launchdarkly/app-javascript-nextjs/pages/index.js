@@ -1,18 +1,20 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useCallback } from "react"
 import Layout from "./components/Layout"
-import { useUnleash } from "./contexts/feature-management"
+import { useLaunchDarkly } from "./contexts/feature-management"
 import { generateListOfProfiles } from "./support/data-provider"
 
 export default function Home() {
   // States
-  const [buttonSchemeValue, setButtonSchemeValue] = useState("btn-danger")
+  const defaultButtonSchemeValue = "btn-danger"
+  const [buttonSchemeValue, setButtonSchemeValue] = useState(defaultButtonSchemeValue)
   const [showProfiles, setShowProfiles] = useState(false)
   const [allowProfileManagement, setAllowProfileManagement] = useState(false)
-  const [textPresentation, setTextPresentation] = useState({
+  const defaultTextPresentation = {
     title: "Hello there 😄!",
     subTitle: "Change how this app behave by changing the feature toggle tool ⚒",
     profileTitle: "Registered profiles",
-  })
+  }
+  const [textPresentation, setTextPresentation] = useState(defaultTextPresentation)
   const [profiles, setProfiles] = useState(generateListOfProfiles())
   // Events
   const deleteProfile = e => {
@@ -24,26 +26,18 @@ export default function Home() {
   }
   // Feature toggle
   /**
-   * @param client {UnleashClient}
+   * @param client {LDClient.LDClient}
    */
   const configureBehaviorThroughFeatures = client => {
-    setShowProfiles(client.isEnabled("SHOW_PROFILES"))
-    setAllowProfileManagement(client.isEnabled("ALLOW_PROFILE_MANAGEMENT"))
-    const textPresentationToggle = client.getVariant("TEXT_PRESENTATION")
-    if (textPresentationToggle.enabled) {
-      // You can always get the same variant by defining the stickiness
-      setTextPresentation(JSON.parse(textPresentationToggle.payload.value))
-    }
-    const buttonSchemeToggle = client.getVariant("PROFILE_MANAGEMENT_BUTTON_SCHEME")
-    if (buttonSchemeToggle.enabled) {
-      // You can always get the same variant by defining the stickiness
-      setButtonSchemeValue(buttonSchemeToggle.payload.value)
-    }
+    setShowProfiles(client.variation("SHOW_PROFILES", false))
+    setAllowProfileManagement(client.variation("ALLOW_PROFILE_MANAGEMENT", false))
+    setTextPresentation(client.variation("TEXT_PRESENTATION", defaultTextPresentation))
+    setButtonSchemeValue(client.variation("PROFILE_MANAGEMENT_BUTTON_SCHEME", defaultButtonSchemeValue))
   }
-  const whenNewConfigurationAvailableHandler = client => {
+  const whenNewConfigurationAvailableHandler = useCallback((client) => {
     configureBehaviorThroughFeatures(client)
-  }
-  const client = useUnleash(whenNewConfigurationAvailableHandler)
+  }, [])
+  const client = useLaunchDarkly(whenNewConfigurationAvailableHandler)
   useEffect(() => {
     if (client) {
       configureBehaviorThroughFeatures(client)
