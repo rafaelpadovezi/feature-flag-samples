@@ -1,5 +1,7 @@
 # App JavaScript Next.js
 
+> The original project made with unleash can be found at https://github.com/willianantunes/tutorials/tree/master/2023/05/feature_toggle_unleash/app-javascript-nextjs
+
 This project demonstrates how to use feature toggles with LaunchDarkly.
 
 ## Configuration

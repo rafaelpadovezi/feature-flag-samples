@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "launchdarkly-exporter"
+version = "0.1.0"
+description = ""
+authors = ["Rafael Miranda <rafaelpadovezi@gmail.com>"]
+readme = "README.md"
+packages = [{include = "launchdarkly_exporter"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+argparse = "^1.4.0"
+requests = "^2.30.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

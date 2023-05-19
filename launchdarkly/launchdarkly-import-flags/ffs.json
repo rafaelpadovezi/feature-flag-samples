@@ -1,0 +1,936 @@
+[
+    {
+        "clientSideAvailability": {
+            "usingEnvironmentId": true,
+            "usingMobileKey": false
+        },
+        "customProperties": {},
+        "defaults": {
+            "offVariation": 1,
+            "onVariation": 0
+        },
+        "description": "",
+        "environments": {
+            "production": {
+                "_environmentName": "Production",
+                "_summary": {
+                    "prerequisites": 0,
+                    "variations": {
+                        "0": {
+                            "isFallthrough": true,
+                            "nullRules": 0,
+                            "rules": 0,
+                            "targets": 0
+                        },
+                        "1": {
+                            "isOff": true,
+                            "nullRules": 0,
+                            "rules": 0,
+                            "targets": 0
+                        }
+                    }
+                },
+                "on": false,
+                "trackEvents": false
+            },
+            "test": {
+                "_environmentName": "Test",
+                "_summary": {
+                    "prerequisites": 0,
+                    "variations": {
+                        "0": {
+                            "isFallthrough": true,
+                            "nullRules": 0,
+                            "rules": 0,
+                            "targets": 0
+                        },
+                        "1": {
+                            "isOff": true,
+                            "nullRules": 0,
+                            "rules": 0,
+                            "targets": 0
+                        }
+                    }
+                },
+                "on": true,
+                "trackEvents": false
+            }
+        },
+        "key": "GAME_SHARK_MODE",
+        "kind": "boolean",
+        "name": "GAME_SHARK_MODE",
+        "tags": [],
+        "temporary": true,
+        "variationJsonSchema": null,
+        "variations": [
+            {
+                "value": true
+            },
+            {
+                "value": false
+            }
+        ]
+    },
+    {
+        "clientSideAvailability": {
+            "usingEnvironmentId": true,
+            "usingMobileKey": false
+        },
+        "customProperties": {},
+        "defaults": {
+            "offVariation": 1,
+            "onVariation": 0
+        },
+        "description": "",
+        "environments": {
+            "production": {
+                "_environmentName": "Production",
+                "_summary": {
+                    "prerequisites": 0,
+                    "variations": {
+                        "0": {
+                            "isFallthrough": true,
+                            "nullRules": 0,
+                            "rules": 0,
+                            "targets": 0
+                        },
+                        "1": {
+                            "isOff": true,
+                            "nullRules": 0,
+                            "rules": 0,
+                            "targets": 0
+                        }
+                    }
+                },
+                "on": false,
+                "trackEvents": false
+            },
+            "test": {
+                "_environmentName": "Test",
+                "_summary": {
+                    "prerequisites": 0,
+                    "variations": {
+                        "0": {
+                            "isFallthrough": true,
+                            "nullRules": 0,
+                            "rules": 0,
+                            "targets": 0
+                        },
+                        "1": {
+                            "isOff": true,
+                            "nullRules": 0,
+                            "rules": 0,
+                            "targets": 0
+                        }
+                    }
+                },
+                "on": true,
+                "trackEvents": false
+            }
+        },
+        "key": "ALLOW_PROFILE_MANAGEMENT",
+        "kind": "boolean",
+        "name": "ALLOW_PROFILE_MANAGEMENT",
+        "tags": [],
+        "temporary": true,
+        "variationJsonSchema": null,
+        "variations": [
+            {
+                "value": true
+            },
+            {
+                "value": false
+            }
+        ]
+    },
+    {
+        "clientSideAvailability": {
+            "usingEnvironmentId": true,
+            "usingMobileKey": false
+        },
+        "customProperties": {},
+        "defaults": {
+            "offVariation": 1,
+            "onVariation": 0
+        },
+        "description": "",
+        "environments": {
+            "production": {
+                "_environmentName": "Production",
+                "_summary": {
+                    "prerequisites": 0,
+                    "variations": {
+                        "0": {
+                            "isFallthrough": true,
+                            "nullRules": 0,
+                            "rules": 0,
+                            "targets": 0
+                        },
+                        "1": {
+                            "isOff": true,
+                            "nullRules": 0,
+                            "rules": 0,
+                            "targets": 0
+                        }
+                    }
+                },
+                "on": false,
+                "trackEvents": false
+            },
+            "test": {
+                "_environmentName": "Test",
+                "_summary": {
+                    "prerequisites": 0,
+                    "variations": {
+                        "0": {
+                            "isFallthrough": true,
+                            "nullRules": 0,
+                            "rules": 0,
+                            "targets": 0
+                        },
+                        "1": {
+                            "isOff": true,
+                            "nullRules": 0,
+                            "rules": 0,
+                            "targets": 0
+                        }
+                    }
+                },
+                "on": true,
+                "trackEvents": false
+            }
+        },
+        "key": "SHOW_PROFILES",
+        "kind": "boolean",
+        "name": "SHOW_PROFILES",
+        "tags": [],
+        "temporary": true,
+        "variationJsonSchema": null,
+        "variations": [
+            {
+                "value": true
+            },
+            {
+                "value": false
+            }
+        ]
+    },
+    {
+        "clientSideAvailability": {
+            "usingEnvironmentId": true,
+            "usingMobileKey": false
+        },
+        "customProperties": {},
+        "defaults": {
+            "offVariation": 0,
+            "onVariation": 1
+        },
+        "description": "",
+        "environments": {
+            "production": {
+                "_environmentName": "Production",
+                "_summary": {
+                    "prerequisites": 0,
+                    "variations": {
+                        "0": {
+                            "isOff": true,
+                            "nullRules": 0,
+                            "rules": 0,
+                            "targets": 0
+                        },
+                        "1": {
+                            "isFallthrough": true,
+                            "nullRules": 0,
+                            "rules": 0,
+                            "targets": 0
+                        }
+                    }
+                },
+                "on": false,
+                "trackEvents": false
+            },
+            "test": {
+                "_environmentName": "Test",
+                "_summary": {
+                    "prerequisites": 0,
+                    "variations": {
+                        "0": {
+                            "isOff": true,
+                            "nullRules": 0,
+                            "rules": 0,
+                            "targets": 0
+                        },
+                        "1": {
+                            "isFallthrough": true,
+                            "nullRules": 0,
+                            "rules": 0,
+                            "targets": 0
+                        }
+                    }
+                },
+                "on": true,
+                "trackEvents": false
+            }
+        },
+        "key": "TEXT_PRESENTATION",
+        "kind": "multivariate",
+        "name": "TEXT_PRESENTATION",
+        "tags": [],
+        "temporary": true,
+        "variationJsonSchema": null,
+        "variations": [
+            {
+                "name": "DEFAULT",
+                "value": {
+                    "profileTitle": "Registered profiles",
+                    "subTitle": "Change how this app behave by changing the feature toggle tool ⚒",
+                    "title": "Hello there 😄!"
+                }
+            },
+            {
+                "name": "FRIENDLIER",
+                "value": {
+                    "profileTitle": "Profiles we've found",
+                    "subTitle": "Psiu! You can change how this thing behaves. Just change the feature toggles ⚒",
+                    "title": "Hello you handsome 😉!"
+                }
+            }
+        ]
+    },
+    {
+        "clientSideAvailability": {
+            "usingEnvironmentId": true,
+            "usingMobileKey": false
+        },
+        "customProperties": {},
+        "defaults": {
+            "offVariation": 0,
+            "onVariation": 2
+        },
+        "description": "Change the button appearance by changing its CSS class. Only for the C# App.",
+        "environments": {
+            "production": {
+                "_environmentName": "Production",
+                "_summary": {
+                    "prerequisites": 0,
+                    "variations": {
+                        "0": {
+                            "isOff": true,
+                            "nullRules": 0,
+                            "rules": 0,
+                            "targets": 0
+                        },
+                        "2": {
+                            "isFallthrough": true,
+                            "nullRules": 0,
+                            "rules": 0,
+                            "targets": 0
+                        }
+                    }
+                },
+                "on": false,
+                "trackEvents": false
+            },
+            "test": {
+                "_environmentName": "Test",
+                "_summary": {
+                    "prerequisites": 0,
+                    "variations": {
+                        "0": {
+                            "isOff": true,
+                            "nullRules": 0,
+                            "rules": 1,
+                            "targets": 0
+                        },
+                        "1": {
+                            "nullRules": 0,
+                            "rules": 1,
+                            "targets": 0
+                        },
+                        "2": {
+                            "isFallthrough": true,
+                            "nullRules": 0,
+                            "rules": 1,
+                            "targets": 0
+                        },
+                        "3": {
+                            "nullRules": 0,
+                            "rules": 1,
+                            "targets": 0
+                        }
+                    }
+                },
+                "on": true,
+                "trackEvents": false
+            }
+        },
+        "key": "PROFILE_MANAGEMENT_BUTTON_SCHEME",
+        "kind": "multivariate",
+        "name": "PROFILE_MANAGEMENT_BUTTON_SCHEME",
+        "tags": [
+            "PYTHON"
+        ],
+        "temporary": false,
+        "variationJsonSchema": null,
+        "variations": [
+            {
+                "name": "BTN-DARK",
+                "value": "btn-dark"
+            },
+            {
+                "name": "BTN_LIGHT",
+                "value": "btn-light"
+            },
+            {
+                "name": "BTN-PRIMARY",
+                "value": "btn-primary"
+            },
+            {
+                "name": "BTN-SECONDARY",
+                "value": "btn-secondary"
+            }
+        ]
+    },
+    {
+        "clientSideAvailability": {
+            "usingEnvironmentId": false,
+            "usingMobileKey": false
+        },
+        "customProperties": {},
+        "defaults": {
+            "offVariation": 1,
+            "onVariation": 0
+        },
+        "description": "",
+        "environments": {
+            "production": {
+                "_environmentName": "Production",
+                "_summary": {
+                    "prerequisites": 0,
+                    "variations": {
+                        "0": {
+                            "isFallthrough": true,
+                            "nullRules": 0,
+                            "rules": 0,
+                            "targets": 0
+                        },
+                        "1": {
+                            "isOff": true,
+                            "nullRules": 0,
+                            "rules": 0,
+                            "targets": 0
+                        }
+                    }
+                },
+                "on": false,
+                "trackEvents": false
+            },
+            "test": {
+                "_environmentName": "Test",
+                "_summary": {
+                    "prerequisites": 0,
+                    "variations": {
+                        "0": {
+                            "isFallthrough": true,
+                            "nullRules": 0,
+                            "rules": 0,
+                            "targets": 0
+                        },
+                        "1": {
+                            "isOff": true,
+                            "nullRules": 0,
+                            "rules": 0,
+                            "targets": 0
+                        }
+                    }
+                },
+                "on": true,
+                "trackEvents": false
+            }
+        },
+        "key": "ENABLE_PROFILE_ADMIN",
+        "kind": "boolean",
+        "name": "ENABLE_PROFILE_ADMIN",
+        "tags": [],
+        "temporary": true,
+        "variationJsonSchema": null,
+        "variations": [
+            {
+                "value": true
+            },
+            {
+                "value": false
+            }
+        ]
+    },
+    {
+        "clientSideAvailability": {
+            "usingEnvironmentId": false,
+            "usingMobileKey": false
+        },
+        "customProperties": {},
+        "defaults": {
+            "offVariation": 1,
+            "onVariation": 0
+        },
+        "description": "",
+        "environments": {
+            "production": {
+                "_environmentName": "Production",
+                "_summary": {
+                    "prerequisites": 0,
+                    "variations": {
+                        "0": {
+                            "isFallthrough": true,
+                            "nullRules": 0,
+                            "rules": 0,
+                            "targets": 0
+                        },
+                        "1": {
+                            "isOff": true,
+                            "nullRules": 0,
+                            "rules": 0,
+                            "targets": 0
+                        }
+                    }
+                },
+                "on": false,
+                "trackEvents": false
+            },
+            "test": {
+                "_environmentName": "Test",
+                "_summary": {
+                    "prerequisites": 0,
+                    "variations": {
+                        "0": {
+                            "isFallthrough": true,
+                            "nullRules": 0,
+                            "rules": 0,
+                            "targets": 0
+                        },
+                        "1": {
+                            "isOff": true,
+                            "nullRules": 0,
+                            "rules": 0,
+                            "targets": 0
+                        }
+                    }
+                },
+                "on": true,
+                "trackEvents": false
+            }
+        },
+        "key": "ENABLE_PROFILE_API",
+        "kind": "boolean",
+        "name": "ENABLE_PROFILE_API",
+        "tags": [],
+        "temporary": true,
+        "variationJsonSchema": null,
+        "variations": [
+            {
+                "value": true
+            },
+            {
+                "value": false
+            }
+        ]
+    },
+    {
+        "clientSideAvailability": {
+            "usingEnvironmentId": true,
+            "usingMobileKey": false
+        },
+        "customProperties": {},
+        "defaults": {
+            "offVariation": 1,
+            "onVariation": 0
+        },
+        "description": "",
+        "environments": {
+            "production": {
+                "_environmentName": "Production",
+                "_summary": {
+                    "prerequisites": 0,
+                    "variations": {
+                        "0": {
+                            "isFallthrough": true,
+                            "nullRules": 0,
+                            "rules": 0,
+                            "targets": 0
+                        },
+                        "1": {
+                            "isOff": true,
+                            "nullRules": 0,
+                            "rules": 0,
+                            "targets": 0
+                        }
+                    }
+                },
+                "on": false,
+                "trackEvents": false
+            },
+            "test": {
+                "_environmentName": "Test",
+                "_summary": {
+                    "prerequisites": 0,
+                    "variations": {
+                        "0": {
+                            "isFallthrough": true,
+                            "nullRules": 0,
+                            "rules": 0,
+                            "targets": 0
+                        },
+                        "1": {
+                            "isOff": true,
+                            "nullRules": 0,
+                            "rules": 0,
+                            "targets": 0
+                        }
+                    }
+                },
+                "on": false,
+                "trackEvents": false
+            }
+        },
+        "key": "SHOW_EASTER_EGG",
+        "kind": "boolean",
+        "name": "SHOW_EASTER_EGG",
+        "tags": [],
+        "temporary": false,
+        "variationJsonSchema": null,
+        "variations": [
+            {
+                "value": true
+            },
+            {
+                "value": false
+            }
+        ]
+    },
+    {
+        "clientSideAvailability": {
+            "usingEnvironmentId": true,
+            "usingMobileKey": false
+        },
+        "customProperties": {},
+        "defaults": {
+            "offVariation": 1,
+            "onVariation": 0
+        },
+        "description": "",
+        "environments": {
+            "production": {
+                "_environmentName": "Production",
+                "_summary": {
+                    "prerequisites": 0,
+                    "variations": {
+                        "0": {
+                            "isFallthrough": true,
+                            "nullRules": 0,
+                            "rules": 0,
+                            "targets": 0
+                        },
+                        "1": {
+                            "isOff": true,
+                            "nullRules": 0,
+                            "rules": 0,
+                            "targets": 0
+                        }
+                    }
+                },
+                "on": false,
+                "trackEvents": false
+            },
+            "test": {
+                "_environmentName": "Test",
+                "_summary": {
+                    "prerequisites": 0,
+                    "variations": {
+                        "0": {
+                            "isFallthrough": true,
+                            "nullRules": 0,
+                            "rules": 0,
+                            "targets": 0
+                        },
+                        "1": {
+                            "isOff": true,
+                            "nullRules": 0,
+                            "rules": 0,
+                            "targets": 0
+                        }
+                    }
+                },
+                "on": false,
+                "trackEvents": false
+            }
+        },
+        "key": "DISABLE_CLAIMS_PAGE",
+        "kind": "boolean",
+        "name": "DISABLE_CLAIMS_PAGE",
+        "tags": [],
+        "temporary": false,
+        "variationJsonSchema": null,
+        "variations": [
+            {
+                "value": true
+            },
+            {
+                "value": false
+            }
+        ]
+    },
+    {
+        "clientSideAvailability": {
+            "usingEnvironmentId": false,
+            "usingMobileKey": false
+        },
+        "customProperties": {},
+        "description": "",
+        "environments": {
+            "production": {
+                "_environmentName": "Production",
+                "_summary": {
+                    "prerequisites": 0,
+                    "variations": {
+                        "0": {
+                            "isFallthrough": true,
+                            "nullRules": 0,
+                            "rules": 0,
+                            "targets": 0
+                        },
+                        "1": {
+                            "isOff": true,
+                            "nullRules": 0,
+                            "rules": 0,
+                            "targets": 0
+                        }
+                    }
+                },
+                "on": false,
+                "trackEvents": false,
+                "trackEventsFallthrough": false
+            },
+            "test": {
+                "_environmentName": "Test",
+                "_summary": {
+                    "prerequisites": 0,
+                    "variations": {
+                        "0": {
+                            "nullRules": 0,
+                            "rules": 1,
+                            "targets": 0
+                        },
+                        "1": {
+                            "isFallthrough": true,
+                            "isOff": true,
+                            "nullRules": 0,
+                            "rules": 0,
+                            "targets": 0
+                        }
+                    }
+                },
+                "on": false,
+                "trackEvents": false,
+                "trackEventsFallthrough": false
+            }
+        },
+        "experiments": {
+            "baselineIdx": 0,
+            "items": []
+        },
+        "goalIds": [],
+        "key": "SHOW_TAGS",
+        "kind": "boolean",
+        "name": "SHOW_TAGS",
+        "tags": [],
+        "temporary": true,
+        "variationJsonSchema": null,
+        "variations": [
+            {
+                "value": true
+            },
+            {
+                "value": false
+            }
+        ]
+    },
+    {
+        "clientSideAvailability": {
+            "usingEnvironmentId": false,
+            "usingMobileKey": false
+        },
+        "customProperties": {},
+        "defaults": {
+            "offVariation": 1,
+            "onVariation": 0
+        },
+        "description": "Allow users to add posts",
+        "environments": {
+            "production": {
+                "_environmentName": "Production",
+                "_summary": {
+                    "prerequisites": 0,
+                    "variations": {
+                        "0": {
+                            "isFallthrough": true,
+                            "nullRules": 0,
+                            "rules": 0,
+                            "targets": 0
+                        },
+                        "1": {
+                            "isOff": true,
+                            "nullRules": 0,
+                            "rules": 0,
+                            "targets": 0
+                        }
+                    }
+                },
+                "on": false,
+                "trackEvents": false,
+                "trackEventsFallthrough": false
+            },
+            "test": {
+                "_environmentName": "Test",
+                "_summary": {
+                    "prerequisites": 0,
+                    "variations": {
+                        "0": {
+                            "nullRules": 0,
+                            "rules": 1,
+                            "targets": 0
+                        },
+                        "1": {
+                            "isFallthrough": true,
+                            "isOff": true,
+                            "nullRules": 0,
+                            "rules": 0,
+                            "targets": 0
+                        }
+                    }
+                },
+                "on": true,
+                "trackEvents": false,
+                "trackEventsFallthrough": false
+            }
+        },
+        "experiments": {
+            "baselineIdx": 0,
+            "items": []
+        },
+        "goalIds": [],
+        "key": "ADD_POST",
+        "kind": "boolean",
+        "name": "ADD_POST",
+        "tags": [
+            "Post"
+        ],
+        "temporary": true,
+        "variationJsonSchema": null,
+        "variations": [
+            {
+                "value": true
+            },
+            {
+                "value": false
+            }
+        ]
+    },
+    {
+        "clientSideAvailability": {
+            "usingEnvironmentId": false,
+            "usingMobileKey": false
+        },
+        "customProperties": {},
+        "defaults": {
+            "offVariation": 1,
+            "onVariation": 0
+        },
+        "description": "",
+        "environments": {
+            "production": {
+                "_environmentName": "Production",
+                "_summary": {
+                    "prerequisites": 0,
+                    "variations": {
+                        "0": {
+                            "isFallthrough": true,
+                            "nullRules": 0,
+                            "rules": 0,
+                            "targets": 0
+                        },
+                        "1": {
+                            "isOff": true,
+                            "nullRules": 0,
+                            "rules": 0,
+                            "targets": 0
+                        }
+                    }
+                },
+                "on": false,
+                "trackEvents": false,
+                "trackEventsFallthrough": false
+            },
+            "test": {
+                "_environmentName": "Test",
+                "_summary": {
+                    "prerequisites": 0,
+                    "variations": {
+                        "0": {
+                            "nullRules": 0,
+                            "rollout": 33000,
+                            "rules": 0,
+                            "targets": 0
+                        },
+                        "1": {
+                            "nullRules": 0,
+                            "rollout": 33000,
+                            "rules": 0,
+                            "targets": 0
+                        },
+                        "2": {
+                            "nullRules": 0,
+                            "rollout": 34000,
+                            "rules": 0,
+                            "targets": 0
+                        },
+                        "3": {
+                            "isOff": true,
+                            "nullRules": 0,
+                            "rollout": 0,
+                            "rules": 0,
+                            "targets": 0
+                        }
+                    }
+                },
+                "on": true,
+                "trackEvents": false,
+                "trackEventsFallthrough": false 
+            }
+        },
+        "experiments": {
+            "baselineIdx": 0,
+            "items": []
+        },
+        "goalIds": [],
+        "key": "BUTTON_SCHEME_VALUE",
+        "kind": "multivariate",
+        "name": "Button Scheme Value",
+        "tags": [],
+        "temporary": true,
+        "variationJsonSchema": null,
+        "variations": [
+            {
+                "value": "btn-primary"
+            },
+            {
+                "value": "btn-secondary"
+            },
+            {
+                "value": "btn-light"
+            },
+            {
+                "value": "btn-dark"
+            }
+        ]
+    }
+]

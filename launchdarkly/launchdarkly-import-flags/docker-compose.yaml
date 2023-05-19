@@ -1,0 +1,9 @@
+version: "3.9"
+services:
+  launchdarkly-import-flags:
+    build:
+      context: .
+    environment:
+      - API_KEY=YOUR_LAUNCHDARKLY_API_KEY
+      - PROJECT=default # create a new project manualy or use the default
+    command: sh -c 'python -u /app/import.py --api-key $$API_KEY --project $$PROJECT'
